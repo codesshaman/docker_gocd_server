@@ -1,4 +1,4 @@
-name = GoCD
+name = GoCD Server
 
 NO_COLOR=\033[0m	# Color Reset
 COLOR_OFF='\e[0m'       # Color Off
