@@ -32,4 +32,8 @@ or
 
 ``docker-compose up -d``
 
-If neceary, uncommit volumes lines for acess to gocd configs in the filesystem.
+If neceary, uncommit volumes lines for acess to gocd configs in the filesystem, or use command:
+
+``docker exec -it gocdserver cat /godata/config/cruise-config.xml | grep agentAutoRegisterKey=``
+
+for show agent autirised key.
