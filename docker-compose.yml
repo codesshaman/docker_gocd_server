@@ -1,0 +1,13 @@
+version: "3"
+services:
+  go-server:
+    image: 'gocd/gocd-server:v22.3.0'
+    restart: unless-stopped
+    ports:
+      - "8153:8153"
+      - "8154:8154"
+    container_name: gocdserver
+    # If necessary, for mount
+    # configuration folder:
+    # volumes:
+      # - ./config:/godata/config:z
