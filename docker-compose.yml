@@ -11,3 +11,24 @@ services:
     # configuration folder:
     # volumes:
       # - ./config:/godata/config:z
+
+  # agent_key_distributer:
+  #   image: 'alpine:3.17.1'
+  #   container_name: keydistributer
+  #   volumes:
+  #     - ./key_distributer.sh:/var/www/key_distributer.sh:z
+  #     - ./config:/var/www:z
+  #   working_dir: /var/www/
+  #   command: "chmod +x key_distributer.sh && ./key_distributer.sh"
+  #   depends_on:
+  #     - go-server
+  
+  # go-agent1:
+  #   image: 'gocd/gocd-agent-alpine-3.16:v22.3.0'
+  #   links:
+  #     - "go-server"
+  #   depends_on:
+  #     - "go-server"
+  #   environment:
+  #     AGENT_AUTO_REGISTER_KEY: '8f526e77-bdf3-46db-a713-bdb9bc9a2fa2'
+  #     GO_SERVER_URL: http://localhost:8154/go
