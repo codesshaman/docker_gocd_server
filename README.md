@@ -4,6 +4,10 @@ Install:
 
 ``git clone https://github.com/codesshaman/docker_gocd_server.git``
 
+Create volume folder:
+
+``mkdir ~/.gocd``
+
 Build:
 
 ``make build``

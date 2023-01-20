@@ -3,11 +3,21 @@ services:
   go-server:
     image: 'gocd/gocd-server:v22.3.0'
     restart: unless-stopped
+    user: "0:0"
     ports:
       - "8153:8153"
       - "8154:8154"
     container_name: gocdserver
     # If necessary, for mount
     # configuration folder:
-    # volumes:
-      # - ./config:/godata/config:z
+    volumes:
+      - go-volume:/godata/config:z
+      - /var/run/docker.sock:/var/run/docker.sock
+
+
+volumes:
+  go-volume:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/${USER}/.gocd
