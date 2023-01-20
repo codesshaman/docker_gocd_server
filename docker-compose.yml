@@ -7,7 +7,7 @@ services:
     ports:
       - "8153:8153"
       - "8154:8154"
-    container_name: gocdserver
+    container_name: go-server
     # If necessary, for mount
     # configuration folder:
     volumes:
