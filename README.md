@@ -36,8 +36,10 @@ or
 
 ``docker-compose up -d``
 
-If neceary, uncommit volumes lines for acess to gocd configs in the filesystem, or use command:
+Howto check agent registery key on container:
 
-``docker exec -it gocdserver cat /godata/config/cruise-config.xml | grep "agentAutoRegisterKey="``
+``docker exec -it go-server cat /godata/config/cruise-config.xml | grep "agentAutoRegisterKey="``
 
-for show agent autirised key.
+Howto check agent registery key on filesystem:
+
+``cat ~/.gocd/cruise-config.xml | grep "agentAutoRegisterKey="``
