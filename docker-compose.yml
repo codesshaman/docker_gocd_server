@@ -13,16 +13,19 @@ services:
       - "8153:8153"
       - "8154:8154"
     container_name: go-server
-    # If necessary, for mount
-    # configuration folder:
     volumes:
-      - go-volume:/godata/config:z
+      - go-configs:/godata/config:z
       - /var/run/docker.sock:/var/run/docker.sock
-
+      - go-plugins:/go-working-dir/plugins
 
 volumes:
-  go-volume:
+  go-plugins:
     driver_opts:
       o: bind
       type: none
-      device: /home/${USER}/.gocd
+      device: /home/${USER}/.gocd/plugins
+  go-configs:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/${USER}/.gocd/configs
