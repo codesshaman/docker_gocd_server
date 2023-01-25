@@ -10,8 +10,8 @@ services:
       retries: 3
     user: "1000:1000"
     ports:
-      - "8153:8153"
-      - "8154:8154"
+      - "8153:8153" # for http
+      - "8154:8154" # for https
     container_name: go-server
     volumes:
       - go-configs:/godata/config:z
