@@ -16,7 +16,7 @@ services:
     volumes:
       - go-configs:/godata/config:z
       - /var/run/docker.sock:/var/run/docker.sock
-      - go-plugins:/go-working-dir/plugins
+      - go-plugins:/go-working-dir/plugins:z
 
 volumes:
   go-plugins:
