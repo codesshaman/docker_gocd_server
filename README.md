@@ -42,4 +42,4 @@ Howto check agent registery key on container:
 
 Howto check agent registery key on filesystem:
 
-``cat ~/.gocd/cruise-config.xml | grep "agentAutoRegisterKey="``
+``cat ~/.gocd/config/cruise-config.xml | grep "agentAutoRegisterKey="``
